@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022C4D9425E48C4D00332B16 /* JNFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C4D9325E48C4D00332B16 /* JNFileUtils.swift */; };
+		025E6D0E25DF6AD90022D7E9 /* JNWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */; };
+		025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2025E098080022D7E9 /* Learn-CGRect.swift */; };
+		025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */; };
+		02B249EF25B5389200AC62AE /* JNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B249EE25B5389200AC62AE /* JNLog.swift */; };
 		120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */; };
 		120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */; };
 		120E94E4259B080D00D7C708 /* Data+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94E3259B080D00D7C708 /* Data+Jn.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		022C4D9325E48C4D00332B16 /* JNFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNFileUtils.swift; sourceTree = "<group>"; };
+		025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNWaterFallLayout.swift; path = SwiftProject/JNKit/UICollectionViewLayout/JNWaterFallLayout.swift; sourceTree = SOURCE_ROOT; };
+		025E6D2025E098080022D7E9 /* Learn-CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Learn-CGRect.swift"; sourceTree = "<group>"; };
+		025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNPermissionAuth.swift; path = SwiftProject/JNKit/Permisson/JNPermissionAuth.swift; sourceTree = SOURCE_ROOT; };
+		02B249EE25B5389200AC62AE /* JNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNLog.swift; path = SwiftProject/JnKit/Log/JNLog.swift; sourceTree = SOURCE_ROOT; };
 		120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Jn.swift"; sourceTree = "<group>"; };
 		120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Jn.swift"; sourceTree = "<group>"; };
 		120E94E3259B080D00D7C708 /* Data+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Jn.swift"; sourceTree = "<group>"; };
@@ -98,6 +108,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025E6D0C25DF6AB90022D7E9 /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */,
+			);
+			path = UICollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		025E6D1F25E097EC0022D7E9 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				025E6D2025E098080022D7E9 /* Learn-CGRect.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		025E6D2B25E0FCD20022D7E9 /* Permisson */ = {
+			isa = PBXGroup;
+			children = (
+				025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */,
+			);
+			path = Permisson;
+			sourceTree = "<group>";
+		};
+		0262D1C325E89514003B07C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				022C4D9325E48C4D00332B16 /* JNFileUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		02B24A3A25B6B4CD00AC62AE /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				02B249EE25B5389200AC62AE /* JNLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		120E96F2259D6E9500D7C708 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +244,7 @@
 		12863F60258B2CBF009AAC8E /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				025E6D1F25E097EC0022D7E9 /* Learn */,
 				12D0CBE12595760500C495CA /* JnKit */,
 				12863F61258B2CBF009AAC8E /* AppDelegate.swift */,
 				12863F63258B2CBF009AAC8E /* SceneDelegate.swift */,
@@ -209,6 +260,10 @@
 		12D0CBE12595760500C495CA /* JnKit */ = {
 			isa = PBXGroup;
 			children = (
+				0262D1C325E89514003B07C5 /* Utils */,
+				025E6D2B25E0FCD20022D7E9 /* Permisson */,
+				025E6D0C25DF6AB90022D7E9 /* UICollectionViewLayout */,
+				02B24A3A25B6B4CD00AC62AE /* Log */,
 				120E9758259DD01F00D7C708 /* Extension */,
 			);
 			path = JnKit;
@@ -327,21 +382,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B249EF25B5389200AC62AE /* JNLog.swift in Sources */,
 				120E9731259D82B800D7C708 /* UICollectionView+Jn.swift in Sources */,
 				120E9746259DC29900D7C708 /* SnapKit+Jn.swift in Sources */,
 				120E972E259D81B500D7C708 /* UILabel+Jn.swift in Sources */,
 				120E974F259DC93A00D7C708 /* UITextView+Jn.swift in Sources */,
+				025E6D0E25DF6AD90022D7E9 /* JNWaterFallLayout.swift in Sources */,
 				120E9505259B0B8E00D7C708 /* UIViewController+Jn.swift in Sources */,
 				120E96EF259D6A6100D7C708 /* BinaryInteger+Jn.swift in Sources */,
 				120E950B259B0CDB00D7C708 /* DispatchQueue+Jn.swift in Sources */,
 				120E973E259DAEC800D7C708 /* Timer+Jn.swift in Sources */,
 				120E9508259B0C0E00D7C708 /* UIApplication+Jn.swift in Sources */,
+				022C4D9425E48C4D00332B16 /* JNFileUtils.swift in Sources */,
 				120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */,
 				120E9749259DC81B00D7C708 /* UITextField+Jn.swift in Sources */,
 				12D0CBE32595760500C495CA /* Double+Jn.swift in Sources */,
 				12863F66258B2CBF009AAC8E /* ViewController.swift in Sources */,
 				120E96E9259C872300D7C708 /* Date+Jn.swift in Sources */,
 				120E9762259DD26300D7C708 /* CATransform3D+Jn.swift in Sources */,
+				025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */,
 				120E94E7259B085500D7C708 /* Array+Jn.swift in Sources */,
 				120E975A259DD08200D7C708 /* CGSize+Jn.swift in Sources */,
 				120E94EA259B08EF00D7C708 /* String+Jn.swift in Sources */,
@@ -354,6 +413,7 @@
 				120E975E259DD23A00D7C708 /* CAGradientLayer+Jn.swift in Sources */,
 				120E9755259DCFD200D7C708 /* CGPoint+Jn.swift in Sources */,
 				120E9701259D758F00D7C708 /* UIImage+Jn.swift in Sources */,
+				025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */,
 				12863F64258B2CBF009AAC8E /* SceneDelegate.swift in Sources */,
 				120E96E3259C85EB00D7C708 /* UIView+Jn.swift in Sources */,
 				120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */,
@@ -508,7 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YSP8KHKLRV;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YSP8KHKLRV;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

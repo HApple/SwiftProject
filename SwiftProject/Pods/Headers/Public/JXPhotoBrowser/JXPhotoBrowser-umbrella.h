@@ -1,1 +1,0 @@
-../../../Target Support Files/JXPhotoBrowser/JXPhotoBrowser-umbrella.h

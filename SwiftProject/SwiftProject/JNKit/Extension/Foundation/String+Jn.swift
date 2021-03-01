@@ -156,6 +156,10 @@ public extension String {
         return "\(prefix)\(self)"
     }
     
+    func appendingPathComponent(name: String) -> String {
+        let path = self + "/" + name
+        return path
+    }
 }
 
 // MARK:- Regex
