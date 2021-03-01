@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				025E6D1F25E097EC0022D7E9 /* Learn */,
-				12D0CBE12595760500C495CA /* JnKit */,
+				12D0CBE12595760500C495CA /* JNKit */,
 				12863F61258B2CBF009AAC8E /* AppDelegate.swift */,
 				12863F63258B2CBF009AAC8E /* SceneDelegate.swift */,
 				12863F65258B2CBF009AAC8E /* ViewController.swift */,
@@ -257,7 +257,7 @@
 			path = SwiftProject;
 			sourceTree = "<group>";
 		};
-		12D0CBE12595760500C495CA /* JnKit */ = {
+		12D0CBE12595760500C495CA /* JNKit */ = {
 			isa = PBXGroup;
 			children = (
 				0262D1C325E89514003B07C5 /* Utils */,
@@ -266,7 +266,7 @@
 				02B24A3A25B6B4CD00AC62AE /* Log */,
 				120E9758259DD01F00D7C708 /* Extension */,
 			);
-			path = JnKit;
+			path = JNKit;
 			sourceTree = "<group>";
 		};
 		354E67825474D6CA3CD927BD /* Pods */ = {
