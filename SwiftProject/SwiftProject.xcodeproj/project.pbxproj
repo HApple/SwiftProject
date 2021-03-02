@@ -14,6 +14,7 @@
 		0262D1E925EDC45F003B07C5 /* FasterUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */; };
 		0262D1ED25EDC57D003B07C5 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */; };
 		0262D1F025EDCAC1003B07C5 /* NSObject+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */; };
+		0262D1FB25EDEE94003B07C5 /* Runtime+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */; };
 		02B249EF25B5389200AC62AE /* JNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B249EE25B5389200AC62AE /* JNLog.swift */; };
 		120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */; };
 		120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */; };
@@ -60,6 +61,7 @@
 		0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FasterUIViewController.swift; sourceTree = "<group>"; };
 		0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Jn.swift"; sourceTree = "<group>"; };
+		0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime+Jn.swift"; sourceTree = "<group>"; };
 		02B249EE25B5389200AC62AE /* JNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNLog.swift; path = SwiftProject/JnKit/Log/JNLog.swift; sourceTree = SOURCE_ROOT; };
 		120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Jn.swift"; sourceTree = "<group>"; };
 		120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Jn.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				120E94E9259B08EF00D7C708 /* String+Jn.swift */,
 				120E973D259DAEC800D7C708 /* Timer+Jn.swift */,
 				0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */,
+				0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			files = (
 				02B249EF25B5389200AC62AE /* JNLog.swift in Sources */,
 				120E9731259D82B800D7C708 /* UICollectionView+Jn.swift in Sources */,
+				0262D1FB25EDEE94003B07C5 /* Runtime+Jn.swift in Sources */,
 				120E9746259DC29900D7C708 /* SnapKit+Jn.swift in Sources */,
 				120E972E259D81B500D7C708 /* UILabel+Jn.swift in Sources */,
 				120E974F259DC93A00D7C708 /* UITextView+Jn.swift in Sources */,
