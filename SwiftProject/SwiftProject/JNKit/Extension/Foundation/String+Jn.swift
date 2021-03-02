@@ -33,6 +33,10 @@ public extension String {
         return self as NSString
     }
     
+    var range: NSRange {
+        return self.nsString.range(of: self)
+    }
+    
     var bool: Bool? {
         switch self.clean.lowercased() {
         case "true", "yes", "1":

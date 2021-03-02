@@ -75,16 +75,9 @@ public extension UIView {
     }
     
     /// 指定方向圆角
-    func cornerRadiusWith(radius: CGFloat, corner: UIRectCorner) {
-        if #available(iOS 11.0, *) {
-            self.layer.cornerRadius = radius
-            self.layer.maskedCorners = CACornerMask(rawValue: corner.rawValue)
-        } else {
-            let path: UIBezierPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corner, cornerRadii: CGSize(width: radius, height: radius))
-            let maskLayer: CAShapeLayer = CAShapeLayer()
-            maskLayer.frame = bounds
-            maskLayer.path = path.cgPath
-            self.layer.mask = maskLayer
+    func addRoundedCorner(radius: CGFloat, corners: UIRectCorner, fillColor: UIColor = .clear) {
+        DispatchQueue.main.async {
+            self.layer.addCornersWith(radius: radius, corners: corners)
         }
     }
     
@@ -128,6 +121,36 @@ public extension UIView {
     }
 }
 
+//MARK: - gradient
+extension UIView {
+    func addGradient(colors: [UIColor],
+                     locations: [CGFloat]? = nil,
+                     startPoint: CGPoint = CGPoint(x: 0, y: 0.5),
+                     endPoint: CGPoint = CGPoint(x: 1.0, y: 0.5),
+                     type: CAGradientLayerType = .axial,
+                     radius: CGFloat = 0,
+                     corners: UIRectCorner = [.bottomRight,.bottomLeft]) {
+        DispatchQueue.main.async {
+                        
+            let sublayer = CAGradientLayer(colors: colors,
+                                           locations: locations,
+                                           startPoint: startPoint,
+                                           endPoint: endPoint,
+                                           type: type)
+            sublayer.frame = self.bounds
+            sublayer.addCornersWith(radius: radius,
+                            corners: corners)
+            self.layer.addCornersWith(radius: radius, corners: corners)            
+            if let shadowLayer = self.layer.sublayers?.first(where: {$0.name == "SHADOW_LAYER"}) {
+                shadowLayer.backgroundColor = UIColor.clear.cgColor
+                self.layer.insertSublayer(sublayer, above: shadowLayer)
+            }else {
+                self.layer.insertSublayer(sublayer, at: 0)
+            }
+            
+        }
+    }
+}
 
 //MARK: - shadow
 extension UIView {
@@ -149,7 +172,7 @@ extension UIView {
                    radius: CGFloat = 0,
                    corners: UIRectCorner = [.bottomRight,.bottomLeft]) {
         DispatchQueue.main.async {
-            self.addCornersWith(radius: radius,
+            self.layer.addCornersWith(radius: radius,
                             corners: corners)
             
             if let sublayer = self.layer.sublayers?.first(where: {$0.name == "SHADOW_LAYER"}) {
@@ -165,42 +188,6 @@ extension UIView {
                                                   corners: corners)
             self.layer.insertSublayer(shadowLayer, at: 0)
         }
-    }
-    
-    func addRoundedCorner(with radius: CGFloat,at corners: UIRectCorner) {
-        DispatchQueue.main.async {
-            self.addCornersWith(radius: radius,
-            corners: corners)
-        }
-    }
-    
-    fileprivate func addCornersWith(radius: CGFloat,
-                        corners:UIRectCorner) {
-        guard radius > 0 else {
-            self.layer.maskedCorners = []
-            return
-        }
-        var maskedCorners = CACornerMask()
-        if corners.contains(.allCorners) {
-            maskedCorners = [.layerMinXMinYCorner,
-                             .layerMaxXMinYCorner,
-                             .layerMinXMaxYCorner,
-                             .layerMaxXMaxYCorner]
-        } else {
-            if corners.contains(.topLeft){
-                maskedCorners.insert(.layerMinXMinYCorner)
-            }
-            if corners.contains(.topRight){
-                maskedCorners.insert(.layerMaxXMinYCorner)
-            }
-            if corners.contains(.bottomLeft){
-                maskedCorners.insert(.layerMinXMaxYCorner)
-            }
-            if corners.contains(.bottomRight){
-                maskedCorners.insert(.layerMaxXMaxYCorner)
-            }
-        }
-        self.layer.maskedCorners = maskedCorners
     }
     
     fileprivate func getShadowLayer(shadowColor: UIColor,
@@ -289,4 +276,39 @@ extension UIView {
         return shadowLayer
     }
     
+}
+
+
+extension CALayer {
+    
+    func addCornersWith(radius: CGFloat,
+                        corners:UIRectCorner) {
+    
+        guard radius > 0 else {
+            self.maskedCorners = []
+            return
+        }
+        var maskedCorners = CACornerMask()
+        if corners.contains(.allCorners) {
+            maskedCorners = [.layerMinXMinYCorner,
+                             .layerMaxXMinYCorner,
+                             .layerMinXMaxYCorner,
+                             .layerMaxXMaxYCorner]
+        } else {
+            if corners.contains(.topLeft){
+                maskedCorners.insert(.layerMinXMinYCorner)
+            }
+            if corners.contains(.topRight){
+                maskedCorners.insert(.layerMaxXMinYCorner)
+            }
+            if corners.contains(.bottomLeft){
+                maskedCorners.insert(.layerMinXMaxYCorner)
+            }
+            if corners.contains(.bottomRight){
+                maskedCorners.insert(.layerMaxXMaxYCorner)
+            }
+        }
+        self.cornerRadius = radius
+        self.maskedCorners = maskedCorners
+    }
 }

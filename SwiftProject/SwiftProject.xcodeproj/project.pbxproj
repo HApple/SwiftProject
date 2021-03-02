@@ -11,6 +11,9 @@
 		025E6D0E25DF6AD90022D7E9 /* JNWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */; };
 		025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2025E098080022D7E9 /* Learn-CGRect.swift */; };
 		025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */; };
+		0262D1E925EDC45F003B07C5 /* FasterUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */; };
+		0262D1ED25EDC57D003B07C5 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */; };
+		0262D1F025EDCAC1003B07C5 /* NSObject+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */; };
 		02B249EF25B5389200AC62AE /* JNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B249EE25B5389200AC62AE /* JNLog.swift */; };
 		120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */; };
 		120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */; };
@@ -54,6 +57,9 @@
 		025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNWaterFallLayout.swift; path = SwiftProject/JNKit/UICollectionViewLayout/JNWaterFallLayout.swift; sourceTree = SOURCE_ROOT; };
 		025E6D2025E098080022D7E9 /* Learn-CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Learn-CGRect.swift"; sourceTree = "<group>"; };
 		025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNPermissionAuth.swift; path = SwiftProject/JNKit/Permisson/JNPermissionAuth.swift; sourceTree = SOURCE_ROOT; };
+		0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FasterUIViewController.swift; sourceTree = "<group>"; };
+		0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Jn.swift"; sourceTree = "<group>"; };
 		02B249EE25B5389200AC62AE /* JNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNLog.swift; path = SwiftProject/JnKit/Log/JNLog.swift; sourceTree = SOURCE_ROOT; };
 		120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Jn.swift"; sourceTree = "<group>"; };
 		120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Jn.swift"; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0262D1E725EDC416003B07C5 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */,
+				0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		02B24A3A25B6B4CD00AC62AE /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +175,7 @@
 				120E94E6259B085500D7C708 /* Array+Jn.swift */,
 				120E94E9259B08EF00D7C708 /* String+Jn.swift */,
 				120E973D259DAEC800D7C708 /* Timer+Jn.swift */,
+				0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -244,6 +260,7 @@
 		12863F60258B2CBF009AAC8E /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				0262D1E725EDC416003B07C5 /* Example */,
 				025E6D1F25E097EC0022D7E9 /* Learn */,
 				12D0CBE12595760500C495CA /* JNKit */,
 				12863F61258B2CBF009AAC8E /* AppDelegate.swift */,
@@ -397,14 +414,17 @@
 				120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */,
 				120E9749259DC81B00D7C708 /* UITextField+Jn.swift in Sources */,
 				12D0CBE32595760500C495CA /* Double+Jn.swift in Sources */,
+				0262D1E925EDC45F003B07C5 /* FasterUIViewController.swift in Sources */,
 				12863F66258B2CBF009AAC8E /* ViewController.swift in Sources */,
 				120E96E9259C872300D7C708 /* Date+Jn.swift in Sources */,
 				120E9762259DD26300D7C708 /* CATransform3D+Jn.swift in Sources */,
 				025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */,
+				0262D1ED25EDC57D003B07C5 /* ExampleTableViewController.swift in Sources */,
 				120E94E7259B085500D7C708 /* Array+Jn.swift in Sources */,
 				120E975A259DD08200D7C708 /* CGSize+Jn.swift in Sources */,
 				120E94EA259B08EF00D7C708 /* String+Jn.swift in Sources */,
 				120E96E6259C86DA00D7C708 /* UIRectCorner+Jn.swift in Sources */,
+				0262D1F025EDCAC1003B07C5 /* NSObject+Jn.swift in Sources */,
 				12863F62258B2CBF009AAC8E /* AppDelegate.swift in Sources */,
 				120E9752259DC99B00D7C708 /* UIWindow+Jn.swift in Sources */,
 				120E96EC259D583B00D7C708 /* UIColor+Jn.swift in Sources */,
