@@ -123,6 +123,43 @@ public extension UIView {
 
 //MARK: - gradient
 extension UIView {
+    
+    enum GradientDirection: Int {
+        case topToBottom = 0
+        case bottomToTop
+        case leftToRight
+        case rightToLeft
+    }
+    
+    func addGradient(colors: [UIColor],
+                     locations: [CGFloat]? = nil,
+                     direction: GradientDirection,
+                     type: CAGradientLayerType = .axial,
+                     radius: CGFloat = 0,
+                     corners: UIRectCorner = [.bottomRight,.bottomLeft]) {
+        var startPoint = CGPoint(x: 0, y: 0.5)
+        var endPoint = CGPoint(x: 1.0, y: 0.5)
+        switch direction {
+         case .topToBottom:
+             startPoint = CGPoint(x: 0.5, y: 0.0)
+             endPoint = CGPoint(x: 0.5, y: 1.0)
+             
+         case .bottomToTop:
+             startPoint = CGPoint(x: 0.5, y: 1.0)
+             endPoint = CGPoint(x: 0.5, y: 0.0)
+             
+         case .leftToRight:
+             startPoint = CGPoint(x: 0.0, y: 0.5)
+             endPoint = CGPoint(x: 1.0, y: 0.5)
+             
+         case .rightToLeft:
+             startPoint = CGPoint(x: 1.0, y: 0.5)
+             endPoint = CGPoint(x: 0.0, y: 0.5)
+         }
+        self.addGradient(colors: colors, locations: locations, startPoint: startPoint, endPoint: endPoint, type: type, radius: radius, corners: corners)
+    }
+    
+    
     func addGradient(colors: [UIColor],
                      locations: [CGFloat]? = nil,
                      startPoint: CGPoint = CGPoint(x: 0, y: 0.5),
@@ -138,10 +175,18 @@ extension UIView {
                                            endPoint: endPoint,
                                            type: type)
             sublayer.frame = self.bounds
-            sublayer.addCornersWith(radius: radius,
-                            corners: corners)
-            self.layer.addCornersWith(radius: radius, corners: corners)            
-            if let shadowLayer = self.layer.sublayers?.first(where: {$0.name == "SHADOW_LAYER"}) {
+            
+            if radius > 0 {
+                self.layer.addCornersWith(radius: radius, corners: corners)
+                sublayer.addCornersWith(radius: radius,
+                                corners: corners)
+            }else {
+                if let radius = self.layer.jn_radius, let corners = self.layer.jn_corners {
+                    sublayer.addCornersWith(radius: radius,
+                                            corners: corners)
+                }
+            }
+            if let shadowLayer = self.jn_shadowLayer {
                 shadowLayer.backgroundColor = UIColor.clear.cgColor
                 self.layer.insertSublayer(sublayer, above: shadowLayer)
             }else {
@@ -172,11 +217,23 @@ extension UIView {
                    radius: CGFloat = 0,
                    corners: UIRectCorner = [.bottomRight,.bottomLeft]) {
         DispatchQueue.main.async {
-            self.layer.addCornersWith(radius: radius,
-                            corners: corners)
             
-            if let sublayer = self.layer.sublayers?.first(where: {$0.name == "SHADOW_LAYER"}) {
+            var rad = radius
+            var cors  = corners
+            if radius > 0 {
+                self.layer.addCornersWith(radius: radius,
+                                corners: corners)
+            }else {
+                if let rd = self.layer.jn_radius{
+                    rad = rd
+                }
+                if let corner = self.layer.jn_corners {
+                    cors = corner
+                }
+            }
+            if let sublayer = self.jn_shadowLayer {
                 sublayer.removeFromSuperlayer()
+                self.jn_shadowLayer = nil
             }
             let shadowLayer = self.getShadowLayer(shadowColor: shadowColor,
                                                   offSet: offSet,
@@ -184,8 +241,8 @@ extension UIView {
                                                   shadowradius: shadowRadius,
                                                   shadowSides: shadowSides,
                                                   fillColor: fillColor,
-                                                  radius: radius,
-                                                  corners: corners)
+                                                  radius: rad,
+                                                  corners: cors)
             self.layer.insertSublayer(shadowLayer, at: 0)
         }
     }
@@ -204,6 +261,7 @@ extension UIView {
         shadowLayer.path = layerPath.cgPath
         shadowLayer.fillColor = fillColor.cgColor
         shadowLayer.name = "SHADOW_LAYER"
+        jn_shadowLayer = shadowLayer
         
         let _offset: CGFloat = radius
         let maxX: CGFloat = self.frame.width
@@ -279,8 +337,44 @@ extension UIView {
 }
 
 
+// MARK: - Associated Object
+private var JNRectCornersKey: Void?
+private var JNRadiusKey: Void?
+private var JNShadowLayerKey: Void?
+private var JNGradientLayerKey: Void?
+
+extension UIView {
+    
+    fileprivate var jn_shadowLayer: CAShapeLayer? {
+        get {
+            return jn_getAssociatedObject(self, &JNShadowLayerKey)
+        }
+        set {
+            jn_setRetainedAssociatedObject(self, &JNShadowLayerKey, newValue)
+        }
+    }
+    
+    fileprivate var jn_gradientLayer: CAGradientLayer? {
+        get {
+            return jn_getAssociatedObject(self, &JNGradientLayerKey)
+        }
+        set {
+            jn_setRetainedAssociatedObject(self, &JNGradientLayerKey, newValue)
+        }
+        
+    }
+}
+
 extension CALayer {
     
+   fileprivate var jn_corners: UIRectCorner? {
+        return jn_getAssociatedObject(self, &JNRectCornersKey)
+    }
+    
+   fileprivate var jn_radius: CGFloat? {
+        return jn_getAssociatedObject(self, &JNRadiusKey)
+    }
+
     func addCornersWith(radius: CGFloat,
                         corners:UIRectCorner) {
     
@@ -310,5 +404,8 @@ extension CALayer {
         }
         self.cornerRadius = radius
         self.maskedCorners = maskedCorners
+        
+        jn_setRetainedAssociatedObject(self, &JNRectCornersKey, corners)
+        jn_setRetainedAssociatedObject(self, &JNRadiusKey, radius)
     }
 }

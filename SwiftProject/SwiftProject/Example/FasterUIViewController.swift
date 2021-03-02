@@ -37,16 +37,14 @@ class FasterUIViewController: UIViewController {
             make.top.equalTo(120)
             make.centerX.equalToSuperview().offset(-60)
         }
-                
+        
+        leftView.addRoundedCorner(radius: 20, corners: [.topLeft,.bottomLeft])
+        leftView.addGradient(colors: [0xFDC62E.color,0xFC9126.color],direction: .leftToRight)
         leftView.addShadowWith(shadowColor: .red,
                                offSet: CGSize(width: 3, height: 3),
                                opacity: 1,
-                               shadowRadius: 20,
-                               shadowSides: .topLeftRight,
-                               fillColor: 0xFC9427.color,
-                               radius: 20,
-                               corners: [.topLeft,.bottomLeft])
-        leftView.addGradient(colors: [0xFDC62E.color,0xFC9126.color], radius: 20, corners: [.topLeft,.bottomLeft])
+                               shadowRadius: 5,
+                               shadowSides: .topBottom)
         
         let rightView = UIButton(type: .custom)
         rightView.setTitle("立即购买", for: .normal)
