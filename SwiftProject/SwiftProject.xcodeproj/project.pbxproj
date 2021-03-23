@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020E5D8A25F218AD00168A65 /* Learn-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020E5D8925F218AD00168A65 /* Learn-Swift.swift */; };
 		022C4D9425E48C4D00332B16 /* JNFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C4D9325E48C4D00332B16 /* JNFileUtils.swift */; };
+		025A2BC02601B40E00641CC3 /* JNCaptchaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BBF2601B40E00641CC3 /* JNCaptchaButton.swift */; };
+		025A2BC72601ED3500641CC3 /* JNBadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BC62601ED3500641CC3 /* JNBadgeProtocol.swift */; };
+		025A2BCA2601EFBE00641CC3 /* CAAnimation+JNBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BC92601EFBE00641CC3 /* CAAnimation+JNBadge.swift */; };
+		025A2CBC2604412900641CC3 /* JNThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2CBB2604412900641CC3 /* JNThumbnailGenerator.swift */; };
+		025A2CC12604567200641CC3 /* UIBarButtonItem+JNBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2CC02604567200641CC3 /* UIBarButtonItem+JNBadge.swift */; };
+		025A2CC4260457A600641CC3 /* UIView+JNBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2CC3260457A600641CC3 /* UIView+JNBadge.swift */; };
 		025E6D0E25DF6AD90022D7E9 /* JNWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */; };
 		025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2025E098080022D7E9 /* Learn-CGRect.swift */; };
 		025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */; };
@@ -15,6 +22,8 @@
 		0262D1ED25EDC57D003B07C5 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */; };
 		0262D1F025EDCAC1003B07C5 /* NSObject+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */; };
 		0262D1FB25EDEE94003B07C5 /* Runtime+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */; };
+		0262D21225EF2453003B07C5 /* JNVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D21125EF2453003B07C5 /* JNVerticalAlignLabel.swift */; };
+		0262D22525EF6CD0003B07C5 /* JNGradientVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D22425EF6CD0003B07C5 /* JNGradientVIew.swift */; };
 		02B249EF25B5389200AC62AE /* JNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B249EE25B5389200AC62AE /* JNLog.swift */; };
 		120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */; };
 		120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */; };
@@ -54,7 +63,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020E5D8925F218AD00168A65 /* Learn-Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Learn-Swift.swift"; sourceTree = "<group>"; };
 		022C4D9325E48C4D00332B16 /* JNFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNFileUtils.swift; sourceTree = "<group>"; };
+		025A2BBF2601B40E00641CC3 /* JNCaptchaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNCaptchaButton.swift; sourceTree = "<group>"; };
+		025A2BC62601ED3500641CC3 /* JNBadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNBadgeProtocol.swift; sourceTree = "<group>"; };
+		025A2BC92601EFBE00641CC3 /* CAAnimation+JNBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+JNBadge.swift"; sourceTree = "<group>"; };
+		025A2CBB2604412900641CC3 /* JNThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNThumbnailGenerator.swift; sourceTree = "<group>"; };
+		025A2CC02604567200641CC3 /* UIBarButtonItem+JNBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+JNBadge.swift"; sourceTree = "<group>"; };
+		025A2CC3260457A600641CC3 /* UIView+JNBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+JNBadge.swift"; sourceTree = "<group>"; };
 		025E6D0D25DF6AD90022D7E9 /* JNWaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNWaterFallLayout.swift; path = SwiftProject/JNKit/UICollectionViewLayout/JNWaterFallLayout.swift; sourceTree = SOURCE_ROOT; };
 		025E6D2025E098080022D7E9 /* Learn-CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Learn-CGRect.swift"; sourceTree = "<group>"; };
 		025E6D2C25E0FD2C0022D7E9 /* JNPermissionAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNPermissionAuth.swift; path = SwiftProject/JNKit/Permisson/JNPermissionAuth.swift; sourceTree = SOURCE_ROOT; };
@@ -62,6 +78,8 @@
 		0262D1EC25EDC57D003B07C5 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		0262D1EF25EDCAC1003B07C5 /* NSObject+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Jn.swift"; sourceTree = "<group>"; };
 		0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime+Jn.swift"; sourceTree = "<group>"; };
+		0262D21125EF2453003B07C5 /* JNVerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNVerticalAlignLabel.swift; sourceTree = "<group>"; };
+		0262D22425EF6CD0003B07C5 /* JNGradientVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNGradientVIew.swift; sourceTree = "<group>"; };
 		02B249EE25B5389200AC62AE /* JNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNLog.swift; path = SwiftProject/JnKit/Log/JNLog.swift; sourceTree = SOURCE_ROOT; };
 		120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Jn.swift"; sourceTree = "<group>"; };
 		120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Jn.swift"; sourceTree = "<group>"; };
@@ -116,6 +134,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025A2BBE2601A23300641CC3 /* JNTheme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JNTheme;
+			sourceTree = "<group>";
+		};
+		025A2BC52601ECFF00641CC3 /* JNBadge */ = {
+			isa = PBXGroup;
+			children = (
+				025A2BC62601ED3500641CC3 /* JNBadgeProtocol.swift */,
+				025A2BC92601EFBE00641CC3 /* CAAnimation+JNBadge.swift */,
+				025A2CC3260457A600641CC3 /* UIView+JNBadge.swift */,
+				025A2CC02604567200641CC3 /* UIBarButtonItem+JNBadge.swift */,
+			);
+			path = JNBadge;
+			sourceTree = "<group>";
+		};
+		025A2CBA260440CB00641CC3 /* HLSThumbnailGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				025A2CBB2604412900641CC3 /* JNThumbnailGenerator.swift */,
+			);
+			path = HLSThumbnailGenerator;
+			sourceTree = "<group>";
+		};
 		025E6D0C25DF6AB90022D7E9 /* UICollectionViewLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				025E6D2025E098080022D7E9 /* Learn-CGRect.swift */,
+				020E5D8925F218AD00168A65 /* Learn-Swift.swift */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -143,6 +188,7 @@
 		0262D1C325E89514003B07C5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				025A2CBA260440CB00641CC3 /* HLSThumbnailGenerator */,
 				022C4D9325E48C4D00332B16 /* JNFileUtils.swift */,
 			);
 			path = Utils;
@@ -155,6 +201,17 @@
 				0262D1E825EDC45F003B07C5 /* FasterUIViewController.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		0262D21025EF241C003B07C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				025A2BC52601ECFF00641CC3 /* JNBadge */,
+				0262D21125EF2453003B07C5 /* JNVerticalAlignLabel.swift */,
+				0262D22425EF6CD0003B07C5 /* JNGradientVIew.swift */,
+				025A2BBF2601B40E00641CC3 /* JNCaptchaButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		02B24A3A25B6B4CD00AC62AE /* Log */ = {
@@ -280,6 +337,8 @@
 		12D0CBE12595760500C495CA /* JNKit */ = {
 			isa = PBXGroup;
 			children = (
+				025A2BBE2601A23300641CC3 /* JNTheme */,
+				0262D21025EF241C003B07C5 /* UI */,
 				0262D1C325E89514003B07C5 /* Utils */,
 				025E6D2B25E0FCD20022D7E9 /* Permisson */,
 				025E6D0C25DF6AB90022D7E9 /* UICollectionViewLayout */,
@@ -403,15 +462,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B249EF25B5389200AC62AE /* JNLog.swift in Sources */,
+				025A2BC02601B40E00641CC3 /* JNCaptchaButton.swift in Sources */,
 				120E9731259D82B800D7C708 /* UICollectionView+Jn.swift in Sources */,
 				0262D1FB25EDEE94003B07C5 /* Runtime+Jn.swift in Sources */,
 				120E9746259DC29900D7C708 /* SnapKit+Jn.swift in Sources */,
 				120E972E259D81B500D7C708 /* UILabel+Jn.swift in Sources */,
+				020E5D8A25F218AD00168A65 /* Learn-Swift.swift in Sources */,
 				120E974F259DC93A00D7C708 /* UITextView+Jn.swift in Sources */,
 				025E6D0E25DF6AD90022D7E9 /* JNWaterFallLayout.swift in Sources */,
 				120E9505259B0B8E00D7C708 /* UIViewController+Jn.swift in Sources */,
 				120E96EF259D6A6100D7C708 /* BinaryInteger+Jn.swift in Sources */,
 				120E950B259B0CDB00D7C708 /* DispatchQueue+Jn.swift in Sources */,
+				025A2CC12604567200641CC3 /* UIBarButtonItem+JNBadge.swift in Sources */,
 				120E973E259DAEC800D7C708 /* Timer+Jn.swift in Sources */,
 				120E9508259B0C0E00D7C708 /* UIApplication+Jn.swift in Sources */,
 				022C4D9425E48C4D00332B16 /* JNFileUtils.swift in Sources */,
@@ -422,20 +484,26 @@
 				12863F66258B2CBF009AAC8E /* ViewController.swift in Sources */,
 				120E96E9259C872300D7C708 /* Date+Jn.swift in Sources */,
 				120E9762259DD26300D7C708 /* CATransform3D+Jn.swift in Sources */,
+				0262D22525EF6CD0003B07C5 /* JNGradientVIew.swift in Sources */,
 				025E6D2125E098080022D7E9 /* Learn-CGRect.swift in Sources */,
+				025A2CBC2604412900641CC3 /* JNThumbnailGenerator.swift in Sources */,
 				0262D1ED25EDC57D003B07C5 /* ExampleTableViewController.swift in Sources */,
 				120E94E7259B085500D7C708 /* Array+Jn.swift in Sources */,
 				120E975A259DD08200D7C708 /* CGSize+Jn.swift in Sources */,
 				120E94EA259B08EF00D7C708 /* String+Jn.swift in Sources */,
+				025A2BC72601ED3500641CC3 /* JNBadgeProtocol.swift in Sources */,
 				120E96E6259C86DA00D7C708 /* UIRectCorner+Jn.swift in Sources */,
 				0262D1F025EDCAC1003B07C5 /* NSObject+Jn.swift in Sources */,
+				0262D21225EF2453003B07C5 /* JNVerticalAlignLabel.swift in Sources */,
 				12863F62258B2CBF009AAC8E /* AppDelegate.swift in Sources */,
 				120E9752259DC99B00D7C708 /* UIWindow+Jn.swift in Sources */,
 				120E96EC259D583B00D7C708 /* UIColor+Jn.swift in Sources */,
 				120E96F5259D716300D7C708 /* UIGestureRecognizer+Jn.swift in Sources */,
+				025A2CC4260457A600641CC3 /* UIView+JNBadge.swift in Sources */,
 				120E94E4259B080D00D7C708 /* Data+Jn.swift in Sources */,
 				120E975E259DD23A00D7C708 /* CAGradientLayer+Jn.swift in Sources */,
 				120E9755259DCFD200D7C708 /* CGPoint+Jn.swift in Sources */,
+				025A2BCA2601EFBE00641CC3 /* CAAnimation+JNBadge.swift in Sources */,
 				120E9701259D758F00D7C708 /* UIImage+Jn.swift in Sources */,
 				025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */,
 				12863F64258B2CBF009AAC8E /* SceneDelegate.swift in Sources */,

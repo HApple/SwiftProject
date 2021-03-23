@@ -12,7 +12,7 @@ class FasterUIViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
         
         let leftView = UIButton(type: .custom)
