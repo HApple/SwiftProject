@@ -2,7 +2,7 @@
 //  JNThumbnailGenerator.swift
 //  SwiftProject
 //
-//  Created by Miles on 2021/3/19.
+//  Created by hjn on 2021/3/19.
 //
 
 import AVFoundation

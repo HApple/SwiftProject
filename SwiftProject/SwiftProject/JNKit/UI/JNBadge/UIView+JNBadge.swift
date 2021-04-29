@@ -2,7 +2,7 @@
 //  UIView+JNBadge.swift
 //  SwiftProject
 //
-//  Created by Miles on 2021/3/19.
+//  Created by hjn on 2021/3/19.
 //
 
 import UIKit
@@ -23,15 +23,45 @@ extension UIView: JNBadgeProtocol {
     
     // MARK: - Public Methods
     public func showBadge() {
-        <#code#>
+        showBadge(style: .reddot, value: 0, animType: .none)
     }
     
     public func showBadge(style: JNBadgeStyle, value: Int, animType: JNBadgeAnimType) {
-        <#code#>
+        sizeToFit()
+        self.animType = animType
+        switch style {
+        case .reddot:
+            showRedDotBadge()
+            break
+        case .number:
+            showNumberBadgeWith(value: value)
+            break
+        case .new:
+            showNewBadge()
+            break
+        }
+        if animType != .none {
+            beginAnimation()
+        }
+    }
+    
+    public func showNumberBadge(with value: Int, animType: JNBadgeAnimType) {
+        self.animType = animType
+        sizeToFit()
+        showNumberBadgeWith(value: value)
+        
+        if animType != .none {
+            beginAnimation()
+        }
+        
     }
     
     public func clearBadge() {
-        <#code#>
+        badge?.isHidden = true
+    }
+    
+    public func resumeBadge() {
+        badge?.isHidden = false
     }
     
     // MARK: - Associated Object
@@ -181,7 +211,50 @@ extension UIView: JNBadgeProtocol {
 
 // MARK: - Private Methods
 extension UIView {
+    
+    private func showRedDotBadge() {
+        badgeInit()
+        // if badge has been dispalyed and, in addition, is was not red dot style, we must update UI.
+        if badge?.tag != JNBadgeStyle.reddot.rawValue {
+            badge?.text = ""
+            badge?.tag = JNBadgeStyle.reddot.rawValue
+            
+        }
+    }
 
+    private func resetBadgeForRedDot() {
+        if badgeRadius > 0 {
+            if let badge = badge {
+                badge.frame = CGRect(x: badge.center.x - badgeRadius, y: badge.center.y + badgeRadius, width: badgeRadius * 2, height: badgeRadius * 2)
+            }
+        }
+        
+    }
+    
+    private func showNewBadge() {
+        
+        badgeInit()
+        //if badge has been displayed and, in addition, is not red dot style, we must update UI.
+        guard let badge = badge else {
+            return
+        }
+        if badge.tag != JNBadgeStyle.new.rawValue {
+            badge.text = "new"
+            badge.tag = JNBadgeStyle.new.rawValue
+            
+            var frame = badge.frame
+            frame.size.width = 22;
+            frame.size.height = 13
+            badge.frame = frame
+            
+            badge.center = CGPoint(x: frame.size.width + 2 + badgeCenterOffset.x, y: badgeCenterOffset.y)
+            badge.font = JNBadgeDefault.font
+            badge.layer.cornerRadius = badge.frame.size.height / 3.0
+        }
+        badge.isHidden = false
+    }
+    
+    
     private func showNumberBadgeWith(value: Int) {
     
         guard value >= 0 else { return }

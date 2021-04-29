@@ -1,105 +1,124 @@
-////
-////  UIBarButtonItem+JNBadge.swift
-////  SwiftProject
-////
-////  Created by Miles on 2021/3/19.
-////
 //
-//import UIKit
+//  UIBarButtonItem+JNBadge.swift
+//  SwiftProject
 //
-//extension UIBarButtonItem: JNBadgeProtocol {
-//    public var badge: UILabel {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeFont: UIFont {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeBgColor: UIColor {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeTextColor: UIColor {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeFrame: CGRect {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeCenterOffset: CGPoint {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var animType: JNBadgeAnimType {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeMaximumBadgeNumber: Int {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public var badgeRadius: CGFloat {
-//        get {
-//            <#code#>
-//        }
-//        set {
-//            <#code#>
-//        }
-//    }
-//    
-//    public func showBadge() {
-//        <#code#>
-//    }
-//    
-//    public func showBadge(style: JNBadgeStyle, value: Int, animType: JNBadgeAnimType) {
-//        <#code#>
-//    }
-//    
-//    public func clearBadge() {
-//        <#code#>
-//    }
-//    
-//    
-//}
+//  Created by hjn on 2021/3/19.
+//
+
+import UIKit
+
+extension UIBarButtonItem: JNBadgeProtocol {
+    
+    public func showBadge() {
+        getActualBadgeSuperView()?.showBadge()
+    }
+    
+    public func showBadge(style: JNBadgeStyle, value: Int, animType: JNBadgeAnimType) {
+        getActualBadgeSuperView()?.showBadge(style: style, value: value, animType: animType)
+    }
+    
+    public func showNumberBadge(with value: Int, animType: JNBadgeAnimType) {
+        getActualBadgeSuperView()?.showNumberBadge(with: value, animType: animType)
+    }
+    
+    public func clearBadge() {
+        getActualBadgeSuperView()?.clearBadge()
+    }
+    
+    public func resumeBadge() {
+        getActualBadgeSuperView()?.resumeBadge()
+    }
+    
+    public var badge: UILabel? {
+        get {
+            getActualBadgeSuperView()?.badge
+        }
+        set {
+            getActualBadgeSuperView()?.badge = newValue
+        }
+    }
+    
+    public var badgeFont: UIFont {
+        get {
+            getActualBadgeSuperView()?.badgeFont ?? JNBadgeDefault.font
+        }
+        set {
+            getActualBadgeSuperView()?.badgeFont = newValue
+        }
+    }
+    
+    public var badgeBgColor: UIColor {
+        get {
+            getActualBadgeSuperView()?.badgeBgColor ?? JNBadgeDefault.bgColor
+        }
+        set {
+            getActualBadgeSuperView()?.badgeBgColor = newValue
+        }
+    }
+    
+    public var badgeTextColor: UIColor {
+        get {
+            getActualBadgeSuperView()?.badgeTextColor ?? JNBadgeDefault.textColor
+        }
+        set {
+            getActualBadgeSuperView()?.badgeTextColor = newValue
+        }
+    }
+    
+    public var badgeFrame: CGRect {
+        get {
+            getActualBadgeSuperView()?.badgeFrame ?? JNBadgeDefault.frame
+        }
+        set {
+            getActualBadgeSuperView()?.badgeFrame = newValue
+        }
+    }
+    
+    public var badgeCenterOffset: CGPoint {
+        get {
+            getActualBadgeSuperView()?.badgeCenterOffset ?? JNBadgeDefault.centerOffset
+        }
+        set {
+            getActualBadgeSuperView()?.badgeCenterOffset = newValue
+        }
+    }
+    
+    public var animType: JNBadgeAnimType {
+        get {
+            getActualBadgeSuperView()?.animType ?? JNBadgeAnimType.none
+        }
+        set {
+            getActualBadgeSuperView()?.animType = newValue
+        }
+    }
+    
+    public var badgeMaximumBadgeNumber: Int {
+        get {
+            getActualBadgeSuperView()?.badgeMaximumBadgeNumber ?? JNBadgeDefault.maximumBadgeNumber
+        }
+        set {
+            getActualBadgeSuperView()?.badgeMaximumBadgeNumber = newValue
+        }
+    }
+    
+    public var badgeRadius: CGFloat {
+        get {
+            getActualBadgeSuperView()?.badgeRadius ?? JNBadgeDefault.radius
+        }
+        set {
+            getActualBadgeSuperView()?.badgeRadius = newValue
+        }
+    }
+}
+
+extension UIBarButtonItem {
+    
+    /**
+     * Because UIBarButtonItem is NSObject, it is not able to directly attach badge.
+     * This method is used to find actual view(non-nil) inside UIBarButtonItem instance.
+     * use KVC to hack actual view.
+     */
+    private func getActualBadgeSuperView() -> UIView? {
+        return value(forKey: "_view") as? UIView
+    }
+}

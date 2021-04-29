@@ -74,19 +74,26 @@ public extension UIView {
         }
     }
     
+    ///
+    func addBorder(width: CGFloat, color: UIColor) {
+        self.jn_borderCornerLayer?.borderWidth = width
+        self.jn_borderCornerLayer?.borderColor = color.cgColor
+    }
+    
     /// 指定方向圆角
-    func addRoundedCorner(radius: CGFloat, corners: UIRectCorner, fillColor: UIColor = .clear) {
-        DispatchQueue.main.async {
-            self.layer.addCornersWith(radius: radius, corners: corners)
+    func addRoundedCorner(radius: CGFloat, corners: UIRectCorner, borderWidth: CGFloat = 0 , borderColor: UIColor = .clear) {
+        DispatchQueue.main.async { [self] in
+            addBorder(width: borderWidth, color: borderColor)
+            self.jn_borderCornerLayer?.addCornersWith(radius: radius, corners: corners)
         }
     }
     
     /// 指定方向边线
     @discardableResult
-    func addBorders(edges: UIRectEdge, color: UIColor, inset: CGFloat = 0.0, thickness: CGFloat = 1.0) -> [UIView] {
+    func addBorderLines(edges: UIRectEdge, color: UIColor, inset: CGFloat = 0.0, thickness: CGFloat = 1.0) -> [UIView] {
         var borders = [UIView]()
         @discardableResult
-        func addBorder(formats: String...) -> UIView {
+        func addBorderLine(formats: String...) -> UIView {
             let border = UIView(frame: .zero)
             border.backgroundColor = color
             border.translatesAutoresizingMaskIntoConstraints = false
@@ -106,16 +113,16 @@ public extension UIView {
         }
         
         if edges.contains(.top) || edges.contains(.all) {
-            addBorder(formats: "V:|-0-[border(==thickness)]", "H:|-inset-[border]-inset-|")
+            addBorderLine(formats: "V:|-0-[border(==thickness)]", "H:|-inset-[border]-inset-|")
         }
         if edges.contains(.bottom) || edges.contains(.all) {
-            addBorder(formats: "V:[border(==thickness)]-0-|", "H:|-inset-[border]-inset-|")
+            addBorderLine(formats: "V:[border(==thickness)]-0-|", "H:|-inset-[border]-inset-|")
         }
         if edges.contains(.left) || edges.contains(.all) {
-            addBorder(formats: "V:|-inset-[border]-inset-|", "H:|-0-[border(==thickness)]")
+            addBorderLine(formats: "V:|-inset-[border]-inset-|", "H:|-0-[border(==thickness)]")
         }
         if edges.contains(.right) || edges.contains(.all) {
-            addBorder(formats: "V:|-inset-[border]-inset-|", "H:[border(==thickness)]-0-|")
+            addBorderLine(formats: "V:|-inset-[border]-inset-|", "H:[border(==thickness)]-0-|")
         }
         return borders
     }
@@ -177,11 +184,11 @@ extension UIView {
             sublayer.frame = self.bounds
             
             if radius > 0 {
-                self.layer.addCornersWith(radius: radius, corners: corners)
+                self.addRoundedCorner(radius: radius, corners: corners)
                 sublayer.addCornersWith(radius: radius,
                                 corners: corners)
             }else {
-                if let radius = self.layer.jn_radius, let corners = self.layer.jn_corners {
+                if let radius = self.jn_borderCornerLayer?.jn_radius, let corners = self.jn_borderCornerLayer?.jn_corners {
                     sublayer.addCornersWith(radius: radius,
                                             corners: corners)
                 }
@@ -221,13 +228,12 @@ extension UIView {
             var rad = radius
             var cors  = corners
             if radius > 0 {
-                self.layer.addCornersWith(radius: radius,
-                                corners: corners)
+                self.addRoundedCorner(radius: radius, corners: corners)
             }else {
-                if let rd = self.layer.jn_radius{
+                if let rd = self.jn_borderCornerLayer?.jn_radius{
                     rad = rd
                 }
-                if let corner = self.layer.jn_corners {
+                if let corner = self.jn_borderCornerLayer?.jn_corners {
                     cors = corner
                 }
             }
@@ -252,7 +258,7 @@ extension UIView {
                                 opacity: Float,
                                 shadowradius: CGFloat,
                                 shadowSides: ShadowPosition,
-                                fillColor: UIColor = .white,
+                                fillColor: UIColor = .clear,
                                 radius: CGFloat = 0,
                                 corners: UIRectCorner = [.bottomRight,.bottomLeft]) -> CALayer {
         let shadowLayer: CAShapeLayer = CAShapeLayer()
@@ -342,6 +348,7 @@ private var JNRectCornersKey: Void?
 private var JNRadiusKey: Void?
 private var JNShadowLayerKey: Void?
 private var JNGradientLayerKey: Void?
+private var JNBorderCornerLayerKey: Void?
 
 extension UIView {
     
@@ -361,7 +368,24 @@ extension UIView {
         set {
             jn_setRetainedAssociatedObject(self, &JNGradientLayerKey, newValue)
         }
-        
+    }
+    
+    fileprivate var jn_borderCornerLayer: CALayer? {
+        get {
+            if let bcLayer = jn_getAssociatedObject(self, &JNBorderCornerLayerKey) as CALayer? {
+                return bcLayer
+            }else {
+                let bcLayer = CALayer()
+                bcLayer.frame = bounds
+                bcLayer.backgroundColor = UIColor.clear.cgColor
+                layer.insertSublayer(bcLayer, at: 0)
+                jn_setRetainedAssociatedObject(self, &JNBorderCornerLayerKey, bcLayer)
+                return bcLayer
+            }
+        }
+        set {
+            jn_setRetainedAssociatedObject(self, &JNBorderCornerLayerKey, newValue)
+        }
     }
 }
 
@@ -375,7 +399,7 @@ extension CALayer {
         return jn_getAssociatedObject(self, &JNRadiusKey)
     }
 
-    func addCornersWith(radius: CGFloat,
+   fileprivate func addCornersWith(radius: CGFloat,
                         corners:UIRectCorner) {
     
         guard radius > 0 else {
@@ -404,7 +428,7 @@ extension CALayer {
         }
         self.cornerRadius = radius
         self.maskedCorners = maskedCorners
-        
+        masksToBounds = true
         jn_setRetainedAssociatedObject(self, &JNRectCornersKey, corners)
         jn_setRetainedAssociatedObject(self, &JNRadiusKey, radius)
     }

@@ -1,5 +1,5 @@
 //
-//  HomeTaBarViewController.swift
+//  HomeTabBarController.swift
 //  SwiftProject
 //
 //  Created by Miles on 2021/3/29.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class HomeTaBarViewController: UITabBarController {
+class HomeTabBarController: UITabBarController {
     
     private var bounceAnimation: CAKeyframeAnimation = {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        bounceAnimation.values = [1.0, 1,4, 0.9, 1.02, 1.0]
+        bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
         bounceAnimation.duration = TimeInterval(0.3)
         bounceAnimation.calculationMode = .cubic
         return bounceAnimation
@@ -29,10 +29,20 @@ class HomeTaBarViewController: UITabBarController {
     
     private func setupChildVC() {
         let first = ExampleTableViewController()
+        
+        let second = UIViewController()
+        second.view.backgroundColor = UIColor.green
+        
+        let third = UIViewController()
+        third.view.backgroundColor = UIColor.purple
+        
+        let fourth = UIViewController()
+        fourth.view.backgroundColor = UIColor.white
+        
         setTabbarChild(first, title: "首页", img: "tabBar_home_normal", selectImg: "tabBar_home_selected")
-        setTabbarChild(first, title: "通话", img: "tabBar_call_normal", selectImg: "tabBar_call_selected")
-        setTabbarChild(first, title: "联系人", img: "tabBar_link_normal", selectImg: "tabBar_link_selected")
-        setTabbarChild(first, title: "消息", img: "tabBar_message_normal", selectImg: "tabBar_message_selected")
+        setTabbarChild(second, title: "通话", img: "tabBar_call_normal", selectImg: "tabBar_call_selected")
+        setTabbarChild(third, title: "联系人", img: "tabBar_link_normal", selectImg: "tabBar_link_selected")
+        setTabbarChild(fourth, title: "消息", img: "tabBar_message_normal", selectImg: "tabBar_message_selected")
     }
     
     private func setTabbarChild(_ vc: UIViewController, title: String, img: String, selectImg: String) {
@@ -68,10 +78,10 @@ class HomeTaBarViewController: UITabBarController {
             item.showBadge(style: .new, value: 1, animType: .bounce)
         }
         if idx == 1 {
-            item.showBadge(style: .number, value: 99, animType: .breathe)
+            item.showBadge(style: .number, value: 99, animType: .none)
         }
         if idx == 2 {
-            item.showBadge(style: .reddot, value: 98, animType: .scale)
+            item.showBadge(style: .reddot, value: 98, animType: .breathe)
         }
         if idx == 3 {
             item.showBadge(style: .new, value: 77, animType: .shake)
@@ -79,6 +89,6 @@ class HomeTaBarViewController: UITabBarController {
     }
 }
 
-extension HomeTaBarViewController: UITabBarControllerDelegate {
+extension HomeTabBarController: UITabBarControllerDelegate {
     
 }

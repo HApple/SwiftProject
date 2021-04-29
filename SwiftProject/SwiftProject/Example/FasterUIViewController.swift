@@ -15,8 +15,21 @@ class FasterUIViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        setupCornerBorderShadow()
+        setupBadge()
+        setupWheelOfFortuneView()
+    }
+
+}
+
+
+// MARK: - Corner Border Shadow
+extension FasterUIViewController {
+    
+    func setupCornerBorderShadow() {
         let leftView = UIButton(type: .custom)
         leftView.titleLabel?.numberOfLines = 2
+        //leftView.backgroundColor = .orange
         let lsub1 = "加入购物车\n"
         let lsub2 = "3.8节 ￥25起"
         let string = lsub1 + lsub2
@@ -64,5 +77,38 @@ class FasterUIViewController: UIViewController {
                                radius: 20,
                                corners: [.topRight,.bottomRight])
     }
+}
 
+// MARK: - Badge
+extension FasterUIViewController {
+    
+    func setupBadge() {
+        
+        let button = UIButton(type: .custom)
+        button.setTitle("消息", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        view.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.width.equalTo(50)
+            make.height.equalTo(30)
+            make.top.equalTo(200)
+            make.centerX.equalToSuperview()
+        }
+        button.badgeCenterOffset = CGPoint(x: 10, y: 0)
+        button.showBadge(style: .number, value: 7, animType: .shake)
+        button.addRoundedCorner(radius: 10, corners: .allCorners, borderWidth: 1, borderColor: .blue)
+    }
+}
+
+extension FasterUIViewController {
+    func setupWheelOfFortuneView() {
+        
+        let wheelView = WheelOfFortuneView()
+        view.addSubview(wheelView)
+        wheelView.snp.makeConstraints { (make) in
+            make.width.height.equalTo(300)
+            make.top.equalTo(250)
+            make.centerX.equalToSuperview()
+        }
+    }
 }

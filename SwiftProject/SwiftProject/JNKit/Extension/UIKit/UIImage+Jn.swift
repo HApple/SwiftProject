@@ -80,3 +80,28 @@ public extension UIImage {
         return self.resizableImage(withCapInsets: insetsV, resizingMode: .stretch)
     }
 }
+
+// http://stackoverflow.com/questions/6708200/ios-improving-speed-of-image-drawing
+extension UIImage {
+    
+    func cgImageRenderedInBitmapContext() -> CGImage {
+        
+        //bitmap context properties
+        let bytesPerPixel = 4
+        let bytesPerRow = bytesPerPixel * Int(size.width)
+        let bitsPerComponet:UInt = 8
+        
+        //create bitmap context
+        let rawData:UnsafeMutableRawPointer = malloc(Int(size.height * size.width) * 4)
+        memset(rawData, 0, Int(size.height * size.width) * 4)
+        let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        /*
+         CGContextRef __nullable CGBitmapContextCreate(void * __nullable data,
+             size_t width, size_t height, size_t bitsPerComponent, size_t bytesPerRow,
+             CGColorSpaceRef cg_nullable space, uint32_t bitmapInfo)
+         */
+        //let context = CGBitmapContextCreate(rawData, UInt(size.width), UInt(size.height), 8, 0, colorSpace, bitmapInfo)
+    }
+    
+}
