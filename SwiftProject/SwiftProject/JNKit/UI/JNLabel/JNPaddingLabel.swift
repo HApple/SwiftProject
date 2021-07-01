@@ -2,7 +2,7 @@
 //  JNPaddingLabel.swift
 //  SwiftProject
 //
-//  Created by Miles on 2021/4/27.
+//  Created by hjn on 2021/4/27.
 //
 
 import UIKit

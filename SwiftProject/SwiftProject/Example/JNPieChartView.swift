@@ -2,7 +2,7 @@
 //  JNPieChartView.swift
 //  SwiftProject
 //
-//  Created by Miles on 2021/3/30.
+//  Created by hjn on 2021/3/30.
 //
 
 import UIKit

@@ -98,7 +98,7 @@ extension UIView: JNBadgeProtocol {
         set {
             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeFont, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             badge?.font = newValue
         }
@@ -114,7 +114,7 @@ extension UIView: JNBadgeProtocol {
         set {
             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeBgColor, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             badge?.backgroundColor = newValue
         }
@@ -128,9 +128,9 @@ extension UIView: JNBadgeProtocol {
             return textColor
         }
         set {
-             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeTextColor, newValue)
+            jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeTextColor, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             badge?.textColor = newValue
         }
@@ -146,7 +146,7 @@ extension UIView: JNBadgeProtocol {
         set {
             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeFrame, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             badge?.frame = newValue
         }
@@ -162,7 +162,7 @@ extension UIView: JNBadgeProtocol {
         set {
             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeCenterOffset, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             badge?.center = CGPoint(x: self.frame.size.width + 2 + newValue.x, y: newValue.y)
         }
@@ -202,7 +202,7 @@ extension UIView: JNBadgeProtocol {
         set {
             jn_setRetainedAssociatedObject(self, &JNBadgeKey.badgeRadius, newValue)
             if badge == nil {
-               badgeInit()
+                badgeInit()
             }
             
         }
@@ -221,7 +221,7 @@ extension UIView {
             
         }
     }
-
+    
     private func resetBadgeForRedDot() {
         if badgeRadius > 0 {
             if let badge = badge {
@@ -256,7 +256,7 @@ extension UIView {
     
     
     private func showNumberBadgeWith(value: Int) {
-    
+        
         guard value >= 0 else { return }
         badgeInit()
         if value == 0 { badge?.isHidden = true }
@@ -273,12 +273,12 @@ extension UIView {
         badge!.frame = frm
         badge!.center = CGPoint(x: frame.size.width + 2 + badgeCenterOffset.x, y: badgeCenterOffset.y)
         badge!.layer.cornerRadius = badge!.frame.height / 2
-
+        
     }
     
     
     private func badgeInit() {
-
+        
         if badge == nil {
             let redotWidth:CGFloat = JNBadgeDefault.redDotRadis * 2
             let frm = CGRect(x: self.frame.size.width, y: -redotWidth, width: redotWidth, height: redotWidth)
@@ -295,7 +295,7 @@ extension UIView {
         }
         
     }
-
+    
     private func adjustLabelWidth(_ label: UILabel) {
         guard let s = label.text as NSString? else { return }
         guard let font = label.font else { return }

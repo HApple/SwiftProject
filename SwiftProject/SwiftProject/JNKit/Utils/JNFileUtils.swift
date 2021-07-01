@@ -108,8 +108,8 @@ extension JNFileUtils {
 
         var size: Float = 0
 
-        if let attr = try? FileManager.default.attributesOfItem(atPath: path) {
-            size += attr[.size] as! Float
+        if let attr = try? FileManager.default.attributesOfItem(atPath: path), let s = attr[.size] as? Int {
+            size += Float(s)
         }
         
         return size

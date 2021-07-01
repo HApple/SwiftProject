@@ -2,13 +2,13 @@
 //  JNImageButton.swift
 //  SwiftProject
 //
-//  Created by Miles on 2021/4/27.
+//  Created by hjn on 2021/4/27.
 //
 
 import UIKit
 
 final class JNImageButton: UIControl {
-
+    
     private lazy var iconImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -16,7 +16,7 @@ final class JNImageButton: UIControl {
     }()
     
     private lazy var titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = self.font
         return label
     }()
@@ -90,7 +90,7 @@ final class JNImageButton: UIControl {
     // To store private titleLabel
     // but sometimes we want to get direct refercence to title view
     var titleContentView: UIView { self.titleLabel }
-
+    
     override var intrinsicContentSize: CGSize {
         let titleWidth = self.titleInsets.left + self.titleLabel.frame.width + self.titleInsets.right
         let imageWidth = self.image != nil
@@ -152,7 +152,7 @@ final class JNImageButton: UIControl {
         case .left:
             self.iconImageView.frame = self.image != nil
                 ? CGRect(origin: CGPoint(x: self.imageInsets.left, y: additionalVerticalOffset + self.imageInsets.top),
-                size: self.imageSize)
+                         size: self.imageSize)
                 : .zero
             self.titleLabel.frame = CGRect(
                 x: self.iconImageView.frame.maxX + self.titleInsets.left + self.imageInsets.right,

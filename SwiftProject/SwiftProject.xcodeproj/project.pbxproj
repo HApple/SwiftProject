@@ -18,6 +18,7 @@
 		0227EAD026130FEF00CAE6D9 /* JNDotOnCicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227EACF26130FEE00CAE6D9 /* JNDotOnCicleView.swift */; };
 		0227EAD32613218700CAE6D9 /* JNPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227EAD22613218700CAE6D9 /* JNPieChartView.swift */; };
 		022C4D9425E48C4D00332B16 /* JNFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C4D9325E48C4D00332B16 /* JNFileUtils.swift */; };
+		0256526D268C168B008E6EFF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0256526C268C168B008E6EFF /* Storyboard.storyboard */; };
 		025A2BC02601B40E00641CC3 /* JNCaptchaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BBF2601B40E00641CC3 /* JNCaptchaButton.swift */; };
 		025A2BC72601ED3500641CC3 /* JNBadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BC62601ED3500641CC3 /* JNBadgeProtocol.swift */; };
 		025A2BCA2601EFBE00641CC3 /* CAAnimation+JNBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A2BC92601EFBE00641CC3 /* CAAnimation+JNBadge.swift */; };
@@ -33,6 +34,7 @@
 		0262D1FB25EDEE94003B07C5 /* Runtime+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */; };
 		0262D21225EF2453003B07C5 /* JNVerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D21125EF2453003B07C5 /* JNVerticalAlignLabel.swift */; };
 		0262D22525EF6CD0003B07C5 /* JNGradientVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262D22425EF6CD0003B07C5 /* JNGradientVIew.swift */; };
+		026C53EB268D65BC00E60D3D /* JNDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C53EA268D65BC00E60D3D /* JNDefaultWrapper.swift */; };
 		02B249EF25B5389200AC62AE /* JNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B249EE25B5389200AC62AE /* JNLog.swift */; };
 		120E94DD259B036C00D7C708 /* CGFloat+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */; };
 		120E94E0259B075E00D7C708 /* Dictionary+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */; };
@@ -48,7 +50,6 @@
 		120E96EC259D583B00D7C708 /* UIColor+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E96EB259D583B00D7C708 /* UIColor+Jn.swift */; };
 		120E96EF259D6A6100D7C708 /* BinaryInteger+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E96EE259D6A6100D7C708 /* BinaryInteger+Jn.swift */; };
 		120E96F5259D716300D7C708 /* UIGestureRecognizer+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E96F4259D716300D7C708 /* UIGestureRecognizer+Jn.swift */; };
-		120E9701259D758F00D7C708 /* UIImage+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E9700259D758F00D7C708 /* UIImage+Jn.swift */; };
 		120E972E259D81B500D7C708 /* UILabel+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E972D259D81B500D7C708 /* UILabel+Jn.swift */; };
 		120E9731259D82B800D7C708 /* UICollectionView+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E9730259D82B800D7C708 /* UICollectionView+Jn.swift */; };
 		120E973E259DAEC800D7C708 /* Timer+Jn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E973D259DAEC800D7C708 /* Timer+Jn.swift */; };
@@ -82,6 +83,7 @@
 		0227EACF26130FEE00CAE6D9 /* JNDotOnCicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNDotOnCicleView.swift; sourceTree = "<group>"; };
 		0227EAD22613218700CAE6D9 /* JNPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNPieChartView.swift; sourceTree = "<group>"; };
 		022C4D9325E48C4D00332B16 /* JNFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNFileUtils.swift; sourceTree = "<group>"; };
+		0256526C268C168B008E6EFF /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		025A2BBF2601B40E00641CC3 /* JNCaptchaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNCaptchaButton.swift; sourceTree = "<group>"; };
 		025A2BC62601ED3500641CC3 /* JNBadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNBadgeProtocol.swift; sourceTree = "<group>"; };
 		025A2BC92601EFBE00641CC3 /* CAAnimation+JNBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+JNBadge.swift"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		0262D1FA25EDEE94003B07C5 /* Runtime+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime+Jn.swift"; sourceTree = "<group>"; };
 		0262D21125EF2453003B07C5 /* JNVerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNVerticalAlignLabel.swift; sourceTree = "<group>"; };
 		0262D22425EF6CD0003B07C5 /* JNGradientVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNGradientVIew.swift; sourceTree = "<group>"; };
+		026C53EA268D65BC00E60D3D /* JNDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNDefaultWrapper.swift; sourceTree = "<group>"; };
 		02B249EE25B5389200AC62AE /* JNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JNLog.swift; path = SwiftProject/JnKit/Log/JNLog.swift; sourceTree = SOURCE_ROOT; };
 		120E94DC259B036C00D7C708 /* CGFloat+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Jn.swift"; sourceTree = "<group>"; };
 		120E94DF259B075E00D7C708 /* Dictionary+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Jn.swift"; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		120E96EB259D583B00D7C708 /* UIColor+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Jn.swift"; sourceTree = "<group>"; };
 		120E96EE259D6A6100D7C708 /* BinaryInteger+Jn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Jn.swift"; sourceTree = "<group>"; };
 		120E96F4259D716300D7C708 /* UIGestureRecognizer+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Jn.swift"; sourceTree = "<group>"; };
-		120E9700259D758F00D7C708 /* UIImage+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Jn.swift"; sourceTree = "<group>"; };
 		120E972D259D81B500D7C708 /* UILabel+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Jn.swift"; sourceTree = "<group>"; };
 		120E9730259D82B800D7C708 /* UICollectionView+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Jn.swift"; sourceTree = "<group>"; };
 		120E973D259DAEC800D7C708 /* Timer+Jn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Jn.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,13 @@
 				020C4C112637C18200042E94 /* JNPaddingLabel.swift */,
 			);
 			path = JNLabel;
+			sourceTree = "<group>";
+		};
+		025652692689597B008E6EFF /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AVFoundation;
 			sourceTree = "<group>";
 		};
 		025A2BBE2601A23300641CC3 /* JNTheme */ = {
@@ -216,6 +225,7 @@
 			children = (
 				025A2CBA260440CB00641CC3 /* HLSThumbnailGenerator */,
 				022C4D9325E48C4D00332B16 /* JNFileUtils.swift */,
+				026C53EA268D65BC00E60D3D /* JNDefaultWrapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -280,7 +290,6 @@
 				120E9504259B0B8E00D7C708 /* UIViewController+Jn.swift */,
 				120E9507259B0C0E00D7C708 /* UIApplication+Jn.swift */,
 				120E96F4259D716300D7C708 /* UIGestureRecognizer+Jn.swift */,
-				120E9700259D758F00D7C708 /* UIImage+Jn.swift */,
 				120E972D259D81B500D7C708 /* UILabel+Jn.swift */,
 				120E9730259D82B800D7C708 /* UICollectionView+Jn.swift */,
 				120E9748259DC81B00D7C708 /* UITextField+Jn.swift */,
@@ -314,6 +323,7 @@
 		120E9758259DD01F00D7C708 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				025652692689597B008E6EFF /* AVFoundation */,
 				120E975C259DD22200D7C708 /* CoreAnimation */,
 				120E9757259DCFFA00D7C708 /* CoreGraphics */,
 				120E9744259DC1E600D7C708 /* SnapKit */,
@@ -359,6 +369,7 @@
 				12863F61258B2CBF009AAC8E /* AppDelegate.swift */,
 				12863F63258B2CBF009AAC8E /* SceneDelegate.swift */,
 				12863F65258B2CBF009AAC8E /* ViewController.swift */,
+				0256526C268C168B008E6EFF /* Storyboard.storyboard */,
 				12863F6A258B2CC0009AAC8E /* Assets.xcassets */,
 				12863F6C258B2CC0009AAC8E /* LaunchScreen.storyboard */,
 				12863F6F258B2CC0009AAC8E /* Info.plist */,
@@ -457,6 +468,7 @@
 			files = (
 				12863F6E258B2CC0009AAC8E /* LaunchScreen.storyboard in Resources */,
 				12863F6B258B2CC0009AAC8E /* Assets.xcassets in Resources */,
+				0256526D268C168B008E6EFF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +526,7 @@
 				12D0CBE32595760500C495CA /* Double+Jn.swift in Sources */,
 				0262D1E925EDC45F003B07C5 /* FasterUIViewController.swift in Sources */,
 				12863F66258B2CBF009AAC8E /* ViewController.swift in Sources */,
+				026C53EB268D65BC00E60D3D /* JNDefaultWrapper.swift in Sources */,
 				120E96E9259C872300D7C708 /* Date+Jn.swift in Sources */,
 				120E9762259DD26300D7C708 /* CATransform3D+Jn.swift in Sources */,
 				0227EAD026130FEF00CAE6D9 /* JNDotOnCicleView.swift in Sources */,
@@ -542,7 +555,6 @@
 				120E975E259DD23A00D7C708 /* CAGradientLayer+Jn.swift in Sources */,
 				120E9755259DCFD200D7C708 /* CGPoint+Jn.swift in Sources */,
 				025A2BCA2601EFBE00641CC3 /* CAAnimation+JNBadge.swift in Sources */,
-				120E9701259D758F00D7C708 /* UIImage+Jn.swift in Sources */,
 				0227EAD32613218700CAE6D9 /* JNPieChartView.swift in Sources */,
 				025E6D2D25E0FD2C0022D7E9 /* JNPermissionAuth.swift in Sources */,
 				020C4C152637E7D800042E94 /* JNImageButton.swift in Sources */,
