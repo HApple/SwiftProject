@@ -1,13 +1,31 @@
 # Uncomment the next line to define a global platform for your project
   platform :ios, '11.0'
+  use_frameworks!
 
 target 'SwiftProject' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
-
-  # Pods for SwiftProject
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'SnapKit'
-  #
+    pod 'SKPhotoBrowser'
+    pod 'JXPhotoBrowser'
+    pod 'SwifterSwift'
+    pod 'UITableView+FDTemplateLayoutCell'
+    pod 'MJRefresh'
+    pod 'SVProgressHUD'
+    pod 'Reusable'
+    pod 'HandyJSON', '~> 5.0.2'
+    pod 'SwiftyJSON'
+    pod 'Then'
+    pod 'URLNavigator'
+    
+    # Rx Extensions
+    pod 'Moya/RxSwift'  # https://github.com/Moya/Moyas
+    pod 'RxDataSources', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxDataSources
+    pod 'RxSwiftExt', '~> 5.0'  # https://github.com/RxSwiftCommunity/RxSwiftExt
+    pod 'NSObject+Rx', '~> 5.0'  # https://github.com/RxSwiftCommunity/NSObject-Rx
+    pod 'RxViewController', '~> 1.0'  # https://github.com/devxoul/RxViewController
+    pod 'RxGesture', '~> 3.0'  # https://github.com/RxSwiftCommunity/RxGesture
+    pod 'RxOptional', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxOptional
+    pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
+    
 end

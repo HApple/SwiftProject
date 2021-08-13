@@ -1,4 +1,4 @@
-module Pods_SwiftProject {
+framework module Pods_SwiftProject {
   umbrella header "Pods-SwiftProject-umbrella.h"
 
   export *

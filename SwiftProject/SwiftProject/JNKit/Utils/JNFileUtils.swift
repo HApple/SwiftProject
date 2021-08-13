@@ -146,23 +146,23 @@ extension JNFileUtils {
         
         //是M单位的字符串
         if indexG < 1000 {
-            return sizeSTR.substring(to: indexG).float ?? 0 * 1024 * 1024 * 1024
+            return Float(sizeSTR.substring(to: indexG)) ?? 0 * 1024 * 1024 * 1024
         }
         //是M单位的字符串
         else if indexM < 1000 {
-            return sizeSTR.substring(to: indexM).float ?? 0 * 1024 * 1024
+            return Float(sizeSTR.substring(to: indexM)) ?? 0 * 1024 * 1024
         }
         //是K单位的字符串
         else if indexK < 1000 {
-            return sizeSTR.substring(to: indexK).float ?? 0 * 1024
+            return Float(sizeSTR.substring(to: indexK)) ?? 0 * 1024
         }
         //是B单位的字符串
         else if indexB < 1000 {
-            return sizeSTR.substring(to: indexB).float ?? 0
+            return Float(sizeSTR.substring(to: indexB)) ?? 0
         }
         //没有任何单位的数字字符串
         else {
-            return size.float ?? 0
+            return Float(size) ?? 0
         }
     }
 }

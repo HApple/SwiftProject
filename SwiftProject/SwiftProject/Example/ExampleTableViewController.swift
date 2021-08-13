@@ -9,7 +9,10 @@ import UIKit
 
 class ExampleTableViewController: UITableViewController {
     
-    var datas:[String] = ["FasterUIViewController"]
+    var datas:[String] = [
+                          "EvaluateViewController",
+                          "JNRxSwiftViewController",
+                         ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +48,9 @@ class ExampleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let anyClass: AnyClass? = NSObject.swiftClassFromString(className: datas[indexPath.row])
         if let VC = anyClass as? UIViewController.Type {
-            self.navigationController?.pushViewController(VC.init(), animated: true)
+            let vc = VC.init()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 

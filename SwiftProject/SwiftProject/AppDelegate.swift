@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = home
         self.window?.makeKeyAndVisible()
         
+        JNLogDebug("ssgsgs")
+        
         return true
     }
 

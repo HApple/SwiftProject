@@ -92,7 +92,7 @@ struct JNPermissionAuth {
     
     struct Notice {
         static var status: Status {
-            if UIApplication.shared?.isRegisteredForRemoteNotifications == true {
+            if UIApplication.shared.isRegisteredForRemoteNotifications == true {
                 return .authorized
             }
             else {
@@ -103,7 +103,7 @@ struct JNPermissionAuth {
     
     static func openSetting() {
         if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-            UIApplication.shared?.open(settingsURL, options: [:], completionHandler: nil)
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
         }
     }
 }
